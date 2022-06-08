@@ -42,7 +42,7 @@ class RecipeHyperlinkedSerializer(serializers.HyperlinkedModelSerializer):
 
     category = CategoryHyperlinkedSerializer()
     url = serializers.HyperlinkedIdentityField(
-        view_name='recipe-detail',
+        view_name='recipe-list-detail',
         lookup_field='pk'
     )
     # category_name = serializers.CharField(source='category.name')

@@ -7,7 +7,7 @@ router = routers.SimpleRouter()
 router.register(r'category', CategoryViewSet,
                 basename='category')
 router.register(r'recipe/list', RecipesHyperlinkedListViewSet,
-                basename='recipe')
+                basename='recipe-list')
 router.register(r'recipe', RecipesViewSet, basename='recipe')
 router.register(r'user', UserViewSet)
 

@@ -1,11 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
 
-// export const HELLO_WORLD = "HELLO_WORLD";
-
-// export function helloWorld(text) {
-//   return { type: HELLO_WORLD, text };
-// }
-
 export const helloWorld = createAction("HELLO_WORLD");
 
 export const changeCategory = createAction("CHANGE_CATEGORY");

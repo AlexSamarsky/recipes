@@ -72,7 +72,7 @@ class RecipesViewSet(viewsets.ModelViewSet):
     pagination_class = RecipeSetPagination
 
 
-class RecipesHyperlinkedListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+class RecipesHyperlinkedListViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
     queryset = Recipe.objects.all()
     serializer_class = RecipeHyperlinkedSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
