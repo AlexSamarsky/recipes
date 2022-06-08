@@ -15,15 +15,38 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'name']
 
 
-class CategorySerializer(serializers.HyperlinkedModelSerializer):
+class CategoryHyperlinkedSerializer(serializers.HyperlinkedModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='category-detail',
+        lookup_field='pk'
+    )
+
+    class Meta:
+        model = Category
+        fields = ('url', 'id', 'name')
+
+
+class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id', 'name']
 
 
-class RecipeSerializer(serializers.HyperlinkedModelSerializer):
-    category = CategorySerializer
-
+class RecipeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Recipe
         fields = ['id', 'name', 'category', 'description']
+
+
+class RecipeHyperlinkedSerializer(serializers.HyperlinkedModelSerializer):
+
+    category = CategoryHyperlinkedSerializer()
+    url = serializers.HyperlinkedIdentityField(
+        view_name='recipe-detail',
+        lookup_field='pk'
+    )
+    # category_name = serializers.CharField(source='category.name')
+
+    class Meta:
+        model = Recipe
+        fields = ['id', 'name', 'category', 'description', 'url']

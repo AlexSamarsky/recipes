@@ -1,0 +1,21 @@
+.recipe__title {
+    justify-content: center;
+    display: flex;
+}
+
+.recipe {
+    padding: 0;
+    margin: 5px 0 0;
+    justify-content: center;
+    display: flex;
+}
+
+.recipe__header{
+    justify-content: center;
+    display: flex;
+}
+
+.recipe__text{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

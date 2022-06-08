@@ -161,3 +161,9 @@ cython_debug/
 
 
 .vscode*
+
+node_modules*
+
+webpack-stats.json
+
+frontend/static*

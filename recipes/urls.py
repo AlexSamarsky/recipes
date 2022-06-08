@@ -1,13 +1,16 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import CategoriesViewSet, RecipesViewSet, UserViewSet, GroupViewSet
+from .views import CategoryViewSet, UserViewSet, RecipesViewSet, RecipesHyperlinkedListViewSet
 
 router = routers.SimpleRouter()
 
-router.register(r'category', CategoriesViewSet)
-router.register(r'recipe', RecipesViewSet)
+router.register(r'category', CategoryViewSet,
+                basename='category')
+router.register(r'recipe/list', RecipesHyperlinkedListViewSet,
+                basename='recipe')
+router.register(r'recipe', RecipesViewSet, basename='recipe')
 router.register(r'user', UserViewSet)
 
 urlpatterns = [
-    path('/', include(router.urls)),
+    path('v1/', include(router.urls)),
 ]
