@@ -1,0 +1,29 @@
+{
+  // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+  // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+  // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3001",
+      "webRoot": "${workspaceFolder}/frontend",
+      "skipFiles": [
+        "${workspaceFolder}/frontend/node_modules/**/*.js",
+        "${workspaceFolder}/frontend/webpack/runtime/**"
+      ],
+      "sourceMaps": true
+    },
+    {
+      "name": "Python: runserver",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceRoot}/manage.py",
+      "args": ["runserver"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

@@ -17,12 +17,12 @@ const CategorySwitch = () => {
   );
 
   useEffect(() => {
-    const url = "http://127.0.0.1:8000/api/v1/category";
-    // console.log("switch", url);
+    const url = "http://127.0.0.1:8000/api/v1/category/";
     fetch(url)
-      .then((respone) => respone.json())
-      .then((data) => {
-        dispatch(loadCategories(data.results));
+      .then((response) => response.json())
+      .then((data) => dispatch(loadCategories(data.results)))
+      .catch((e) => {
+        console.log("e", e);
       });
   }, []);
 
@@ -37,7 +37,7 @@ const CategorySwitch = () => {
           }}
         >
           <Dropdown.Toggle id="dropdown-basic">
-            {!currentCategory
+            {!currentCategory || !categories.length
               ? "Выбрать категорию"
               : categories.find((e) => e.id == currentCategory).name}
           </Dropdown.Toggle>

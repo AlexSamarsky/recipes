@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack server --open --mode development --entry ./src/index.js --output-path ./static/frontend",
+    "dev": "webpack --mode development --entry ./src/index.js --output-path ./static/frontend --watch",
     "build": "webpack --mode production --entry ./src/index.js --output-path ./static/frontend",
-    "devdebug": "react-scripts start"
+    "debug": "webpack serve --open --mode development --config webpack.dev.js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "^5.0.1",

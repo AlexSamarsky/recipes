@@ -4,13 +4,6 @@ const BundleTracker = require("webpack-bundle-tracker");
 
 module.exports = {
   cache: false,
-  // devServer: {
-  //   static: {
-  //     directory: path.join(__dirname, "static", "frontend"),
-  //   },
-  //   // port: 3001,
-  //   hot: true,
-  // },
   module: {
     rules: [
       {
